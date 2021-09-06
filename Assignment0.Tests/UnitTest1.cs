@@ -57,5 +57,77 @@ namespace Assignment0.Tests
             //Assert
             Assert.Equal(false, output);
         }
+
+        [Fact]
+        public void Main_is_2020_LeapYear()
+        {
+            //Arrange
+            var writer = new StringWriter();
+            Console.SetOut(writer);
+
+            var input = new StringReader("2020");
+            Console.SetIn(input);
+
+            //Act
+            Program.Main(new string[0]);
+
+            //Assert
+            var output = writer.GetStringBuilder().ToString().Trim();
+            Assert.Equal("yay", output);
+        }
+
+         [Fact]
+        public void Main_is_1600_LeapYear()
+        {
+            //Arrange
+            var writer = new StringWriter();
+            Console.SetOut(writer);
+
+            var input = new StringReader("1600");
+            Console.SetIn(input);
+
+            //Act
+            Program.Main(new string[0]);
+
+            //Assert
+            var output = writer.GetStringBuilder().ToString().Trim();
+            Assert.Equal("yay", output);
+        }
+
+         [Fact]
+        public void Main_is_2021_LeapYear()
+        {
+            //Arrange
+            var writer = new StringWriter();
+            Console.SetOut(writer);
+
+            var input = new StringReader("2021");
+            Console.SetIn(input);
+
+            //Act
+            Program.Main(new string[0]);
+
+            //Assert
+            var output = writer.GetStringBuilder().ToString().Trim();
+            Assert.Equal("nay", output);
+        }
+
+         [Fact]
+        public void Main_is_1900_LeapYear()
+        {
+            //Arrange
+            var writer = new StringWriter();
+            Console.SetOut(writer);
+
+            var input = new StringReader("1900");
+            Console.SetIn(input);
+
+            //Act
+            Program.Main(new string[0]);
+
+            //Assert
+            var output = writer.GetStringBuilder().ToString().Trim();
+            Assert.Equal("nay", output);
+        }
     }
 }
